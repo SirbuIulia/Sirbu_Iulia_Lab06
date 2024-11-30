@@ -18,24 +18,14 @@ namespace Sirbu_Iulia_Lab2.Controllers
             _logger = logger;
         }
 
-        public async Task<ActionResult> Statistics()
-        {
-            IQueryable<OrderGroup> data =
-            from order in _context.Order
-            group order by order.OrderDate into dateGroup
-            select new OrderGroup()
-            {
-                OrderDate = dateGroup.Key,
-                BookCount = dateGroup.Count()
-            };
-            return View(await data.AsNoTracking().ToListAsync());
-        }
-
         public IActionResult Index()
         {
             return View();
         }
-
+        public IActionResult Chat()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -46,5 +36,19 @@ namespace Sirbu_Iulia_Lab2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public async Task<ActionResult> Statistics()
+        {
+            IQueryable<OrderGroup> data =
+            from order in _context.Order
+            group order by order.OrderDate into dateGroup
+            orderby dateGroup.Key
+            select new OrderGroup()
+            {
+                OrderDate = dateGroup.Key,
+                BookCount = dateGroup.Count()
+            };
+            return View(await data.AsNoTracking().ToListAsync());
+        }
+
     }
 }
