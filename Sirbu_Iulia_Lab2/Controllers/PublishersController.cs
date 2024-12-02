@@ -1,14 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authorization;
 using Sirbu_Iulia_Lab2.Data;
 using Sirbu_Iulia_Lab2.Models;
 using Sirbu_Iulia_Lab2.Models.LibraryViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Sirbu_Iulia_Lab2.Controllers
 {
+    [Authorize(Policy = "OnlySales")]
     public class PublishersController : Controller
     {
         private readonly LibraryContext _context;

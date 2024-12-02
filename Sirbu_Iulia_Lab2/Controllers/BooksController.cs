@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Sirbu_Iulia_Lab2.Models;
 
 namespace Sirbu_Iulia_Lab2.Controllers
 {
+    [Authorize(Roles = "Employee")]
     public class BooksController : Controller
     {
         private readonly LibraryContext _context;
@@ -20,6 +22,7 @@ namespace Sirbu_Iulia_Lab2.Controllers
         }
 
         // GET: Books
+        [AllowAnonymous]
         public async Task<IActionResult> Index(string sortOrder, string currentFilter,string searchString,int? pageNumber)
         {
             ViewData["CurrentSort"] = sortOrder;
@@ -71,6 +74,7 @@ namespace Sirbu_Iulia_Lab2.Controllers
         }
 
         // GET: Books/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

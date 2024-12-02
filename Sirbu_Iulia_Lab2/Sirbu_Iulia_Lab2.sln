@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sirbu_Iulia_Lab2", "Sirbu_I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryModel", "..\LibraryModel\LibraryModel.csproj", "{DBBCB5FC-E12F-4BC1-A606-D2A3918BEAC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryWebAPI", "..\LibraryWebAPI\LibraryWebAPI.csproj", "{92B1A904-0973-412D-B8A8-115ACEFBA9AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryWebAPI", "..\LibraryWebAPI\LibraryWebAPI.csproj", "{92B1A904-0973-412D-B8A8-115ACEFBA9AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
