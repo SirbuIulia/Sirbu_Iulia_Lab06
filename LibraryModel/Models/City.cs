@@ -10,6 +10,6 @@ namespace Sirbu_Iulia_Lab2.Models
     {
         public int ID { get; set; }
         public string CityName { get; set; }
-        public ICollection<Customer>? Customer { get; set; }
+        public ICollection<Customer>? Customers { get; set; }
     }
 }
